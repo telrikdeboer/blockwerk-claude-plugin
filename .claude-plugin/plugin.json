@@ -1,0 +1,13 @@
+{
+  "name": "blockwerk",
+  "version": "1.1.2",
+  "description": "Build, run and analyse block-diagram simulations — PID loops, transfer functions, state-space models — on a live BlockWerk canvas.",
+  "author": {
+    "name": "BlockWerk",
+    "email": "blockwerk.tech@outlook.com",
+    "url": "https://blockwerk.tech"
+  },
+  "homepage": "https://blockwerk.tech/connect-ai",
+  "license": "MIT",
+  "keywords": ["simulation", "control-systems", "block-diagram", "pid", "engineering", "mcp"]
+}

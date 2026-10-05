@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "blockwerk": {
+      "type": "http",
+      "url": "https://blockwerk-mcp-worker.blockwerk.workers.dev/"
+    }
+  }
+}
