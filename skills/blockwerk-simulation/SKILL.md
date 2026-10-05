@@ -11,11 +11,16 @@ tab is paired, runs the simulation there.
 
 ## Two modes
 
-- **Unpaired (default).** The server keeps a private scratch canvas. You can list
-  blocks, build and edit a diagram, inspect it and export it. Anything that needs
-  the solver — `run_simulation`, reading signals, optimisation, jobs — returns a
-  share link instead. Give that link to the user and ask them to open it and
-  press Run.
+- **Unpaired (default).** The server keeps a private scratch canvas. These tools
+  work there: `get_engine_status`, `get_available_blocks`, `describe_canvas`,
+  `load_diagram`, `add_block`, `update_params`, `connect_blocks`, `delete_block`,
+  `batch_commands`, `analyze_topology`, `export_diagram`, `get_share_link` and
+  `clear_canvas`. Every other tool needs the simulation engine, which runs in the
+  user's browser tab: simulation, signal and analysis tools, optimisation, jobs,
+  `tidy_layout`, `generate_code`, undo/redo and architect memory. Unpaired, those
+  return an error that says no tab is paired. That is expected: call
+  `get_share_link`, give the link to the user and ask them to open it and press
+  Run.
 - **Paired.** The user opens https://blockwerk.tech, clicks **Connect AI** and
   copies the connector URL. Every tool then drives their live canvas, including
   simulation and results.
@@ -29,7 +34,7 @@ simulation ran when it returned a link.
 2. For a whole diagram at once, use `load_diagram` — the fastest and most
    reliable route. Every connection needs its own unique `id`.
 3. For small edits: `add_block` → `connect_blocks` → `update_params`.
-4. Finish with `tidy_layout`, then `get_share_link` so the user can open it.
+4. Paired only: `tidy_layout`. Then `get_share_link` so the user can open it.
 
 `clear_canvas`, `delete_block` and `load_diagram` ask the user for an approval
 click in their tab when paired. Prefer one `load_diagram` over many deletes.
@@ -50,5 +55,5 @@ tools, not from expectation.
 
 ## Code export
 
-`generate_code` emits C++/Arduino, Python or Rust from the diagram. Use InPort
+Paired only: `generate_code` emits C++/Arduino, Python or Rust from the diagram. Use InPort
 and OutPort blocks to mark the hardware I/O boundary.
