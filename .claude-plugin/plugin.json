@@ -9,14 +9,7 @@
   },
   "homepage": "https://blockwerk.tech/connect-ai",
   "license": "MIT",
-  "keywords": [
-    "simulation",
-    "control-systems",
-    "block-diagram",
-    "pid",
-    "engineering",
-    "mcp"
-  ],
+  "keywords": ["simulation", "control-systems", "block-diagram", "pid", "engineering", "mcp"],
   "icon": ".claude-plugin/icon.png",
   "privacyPolicyUrl": "https://blockwerk.tech/privacy"
 }

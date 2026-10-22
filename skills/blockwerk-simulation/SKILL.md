@@ -25,6 +25,14 @@ tab is paired, runs the simulation there.
   copies the connector URL. Every tool then drives their live canvas, including
   simulation and results.
 
+## Inline canvas (MCP App)
+
+In clients that support MCP Apps, `load_diagram`, `load_template`, `run_simulation`
+and `get_share_link` also show the diagram inline in the chat as a running canvas,
+with pause and restart. It plays in the chat itself, so it works without a paired
+tab too. It is a view of the diagram, not a source of numbers: read results from the
+tools, not from what the canvas appears to show.
+
 Tell the user which mode they are in when a tool reports it; do not pretend a
 simulation ran when it returned a link.
 
